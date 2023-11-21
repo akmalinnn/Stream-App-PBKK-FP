@@ -16,6 +16,8 @@ class Search extends Component
     {
       $searchResults = [];
 
+      // dump($this->search);
+
       // @phpstan-ignore-next-line
       if (strlen($this->search) >= 3) {
           $searchResults = Http::withToken(config('services.tmdb.token'))
@@ -27,7 +29,7 @@ class Search extends Component
 
       return view('livewire.search', [
           // @phpstan-ignore-next-line
-          'searchResults' => collect($searchResults)->take(7),
+          'searchResults' => collect($searchResults)->take(5),
       ]);
     }
 }
