@@ -18,7 +18,7 @@
         <h1 class="w-full px-12 text-center text-4xl font-bold md:w-1/2 lg:px-0 lg:text-6xl">Unlimited movies,
             TV shows and more.</h1>
         <p class="mt-6 px-12 text-center text-xl md:text-2xl">Watch anywhere. Cancel anytime.</p>
-        <x-newsletter />
+        {{-- <x-newsletter /> --}}
     </div>
 </div>
 

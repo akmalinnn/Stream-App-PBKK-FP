@@ -36,7 +36,7 @@
                 </div>
             </div>
         </div>
-        <img width="600" src="{{ asset('img/img1.png') }}" />
+        <img width="600" src="{{ asset('img/img1.jpg') }}" />
     </div>
 </section>
 
@@ -44,7 +44,7 @@
 
 <section>
     <div class="full flex justify-center p-12">
-        <img width="600" src="{{ asset('img/img2.png') }}" />
+        <img width="600" src="{{ asset('img/img2.jpg') }}" />
         <div class="flex w-3/5 flex-col items-center justify-center">
             <div>
                 <div class="text-4xl">Download your shows to watch offline.</div>
