@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StreamController;
+use App\Http\Controllers\TvController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,9 +20,7 @@ Route::get('/', function () {
   return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('home');
-});
+Route::view('/home', 'home')->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -34,6 +33,9 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/movies', [StreamController::class, 'index'])->name('stream.index');
     Route::get('/movie/{watch}', [StreamController::class, 'show'])->name('movies.show');
+
+    Route::get('/shows', [TvController::class, 'index'])->name('shows.index');
+    Route::get('/show/{watch}', [TvController::class, 'show'])->name('shows.show');
 });
 
 require __DIR__.'/auth.php';

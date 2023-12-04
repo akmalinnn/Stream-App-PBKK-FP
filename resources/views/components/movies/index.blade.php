@@ -32,10 +32,16 @@
     <!-- End Wester Movies -->
 
     <!-- Horror Movies -->
-    <x-movies :movies=$horror>
+    <x-movies :movies='$horror'>
         <x-slot:category> Horror &rsaquo; </x-slot:category>
     </x-movies>
     <!-- End Horror Movies -->
+
+    <!-- Thriller Movies -->
+    <x-movies :movies='$thriller'>
+        <x-slot:category> Thriller &rsaquo; </x-slot:category>
+    </x-movies>
+    <!-- End Thriller Movies -->
 
     <!-- Animation Movies -->
     <x-movies :movies='$animation'>
