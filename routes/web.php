@@ -40,7 +40,6 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/favorites', [FavoritesController::class, 'show'])->name('favorites.index');
     Route::post('/favorites', [FavoritesController::class, 'store'])->name('favorites.store');
-    Route::get('/favorites', [FavoritesController::class, 'sort'])->name('favorites.index');
 });
 
 require __DIR__.'/auth.php';

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('content_id');
             $table->string('type');
             $table->string('title');
-            $table->string('overview');
+            $table->string('overview', 1000);
             $table->date('release_date');
 
             # Foreign Keys

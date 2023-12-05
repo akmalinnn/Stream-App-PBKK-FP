@@ -64,4 +64,15 @@
     </table>
   </div>
   </section>
+  <script src="../../../js/app.js"></script>
+  <script src="../../../../public/echo.js"></script>
+  <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
+  <script>
+    console.log('hello i am under the water');
+    Echo.channel('favorites')
+      .listen('NewFavoriteAdded', (e) => {
+        console.log(e.favorite);
+        alert('A new favorite has been added!');
+      });
+  </script>
 </x-layout>

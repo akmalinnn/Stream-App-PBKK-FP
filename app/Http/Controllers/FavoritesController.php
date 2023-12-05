@@ -9,6 +9,7 @@ use Illuminate\Contracts\View\View;
 use App\Models\Favorites;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
+use App\Providers\NewFavoriteAdded;
 
 class FavoritesController extends Controller
 {
@@ -26,7 +27,7 @@ class FavoritesController extends Controller
       ->get($apiUrl . $id)
       ->json();
 
-    dump($response);
+    // dump($response);
 
     if ($type == 'movie') {
       $contentDetails = [
@@ -66,17 +67,12 @@ class FavoritesController extends Controller
 
     $favorite->save();
 
-    return back();
+    event(new NewFavoriteAdded($favorite->title));
+
+    return redirect()->action([FavoritesController::class, 'show']);
   }
 
-  public function show(): View|Factory
-  {
-    $favorites = Favorites::where('user_id', auth()->user()->id)->get();
-
-    return view('components.favorites.show', ['favorites' => $favorites]);
-  }
-
-  public function sort(Request $request)
+  public function show(Request $request): View|Factory
   {
     $sort = $request->query('sort', 'title');
     $direction = $request->query('direction', 'asc');
