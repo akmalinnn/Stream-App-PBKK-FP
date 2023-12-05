@@ -10,7 +10,7 @@
       <li><a href=" {{route('shows.index') }}">Series</a></li>
       <li><a href=" {{route('stream.index') }}">Films</a></li>
       <li>Latest</li>
-      <li>My List</li>
+      <li><a href=" {{route('favorites.index') }}">My List</a></li>
       <li>Watch Again</li>
     </ul>
     @endauth
