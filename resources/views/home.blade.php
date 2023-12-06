@@ -70,7 +70,24 @@
 </section>
 
 <x-gap />
-
 <x-flash />
+
+<section>
+    <footer class="bg-gray-800 text-white p-4 text-center">
+        <div>
+            <p>&copy; 2023 StreamApp. All rights reserved.</p>
+            <p>Contact us: <a href="mailto:info@streamapp.com">info@streamapp.com</a></p>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="mt-4">
+            <a href="https://facebook.com/streamapp" target="_blank" class="text-gray-300 hover:text-white mr-4">Facebook</a>
+            <a href="https://twitter.com/streamapp" target="_blank" class="text-gray-300 hover:text-white mr-4">Twitter</a>
+            <a href="https://instagram.com/streamapp" target="_blank" class="text-gray-300 hover:text-white">Instagram</a>
+            <!-- Add more social media links as needed -->
+        </div>
+    </footer>
+</section>
+
 </body>
 </html>

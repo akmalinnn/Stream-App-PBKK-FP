@@ -35,9 +35,12 @@
 
         <!-- Dropdown Menu -->
         <div x-cloak x-show="open" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform scale-90" x-transition:enter-end="opacity-100 transform scale-100" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 transform scale-100" x-transition:leave-end="opacity-0 transform scale-90" class="absolute right-0 min-w-max rounded-md bg-white text-gray-500 shadow-xl">
-          <form action="/logout" method="post" class="">
+            <form action="/profile" method="GET" class="">
+                @csrf
+            <button type="submit" class="block rounded-md px-8 py-2 font-bold hover:bg-gray-200 hover:text-gray-600">Profile</button>
+            </form>
+            <form action="/logout" method="post" class="">
             @csrf
-
             <button type="submit" class="block rounded-md px-8 py-2 font-bold hover:bg-gray-200 hover:text-gray-600">Log Out</button>
             @can('admin')
             <a href="/admin" class="block rounded-b-md px-8 py-2 hover:bg-gray-200 hover:text-gray-600">Admin Dashboard</a>
