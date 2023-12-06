@@ -14,11 +14,29 @@
         </div>
     @endauth
 
-    <div class="z-30 flex flex-col items-center justify-center py-48 text-gray-100 lg:py-32">
-        <h1 class="w-full px-12 text-center text-4xl font-bold md:w-1/2 lg:px-0 lg:text-6xl">Unlimited movies,
-            TV shows and more.</h1>
-        <p class="mt-6 px-12 text-center text-xl md:text-2xl">Watch anywhere. Cancel anytime.</p>
 
-    </div>
+<div class="z-30 flex flex-col items-center justify-center py-48 text-gray-100 lg:py-32">
+    <h1 class="w-full px-12 text-center text-4xl font-bold md:w-1/2 lg:px-0 lg:text-6xl">Unlimited movies,
+        TV shows and more.</h1>
+    <p class="mt-6 px-12 text-center text-xl md:text-2xl">Watch anywhere. Cancel anytime.</p>
+
+    <!-- Email Registration Form -->
+
+    @guest
+    <form action="{{ route('register') }}" method="get" class="mt-6 text-center">
+        @csrf
+        <div class="flex mt-2 p-2 border rounded-md w-full">
+            <input type="email" name="email" id="email" class="w-full" value="{{ old('email', request('email')) }}" required placeholder="Email">
+
+            <!-- Submit Button -->
+            <button type="submit" class="ml-2 p-2 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none">Get Started</button>
+        </div>
+    </form>
+    @endguest
+
+    <!-- End of Email Registration Form -->
+</div>
+
+
 </div>
 

@@ -1,6 +1,6 @@
 @props(['movies'])
 
-<div class="">
+<div class="mb-4">
     <div class="mb-4 text-lg antialiased font-bold tracking-wider text-gray-200">
         {{ $category }}
     </div>

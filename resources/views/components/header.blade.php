@@ -6,13 +6,15 @@
 
     @auth
     <ul class="ml-12 hidden w-1/2 flex-row space-x-3 text-sm lg:flex">
-      <li><a href=" {{route('home') }}">Home</a></li>
-      <li><a href=" {{route('shows.index') }}">Series</a></li>
-      <li><a href=" {{route('stream.index') }}">Films</a></li>
-      <li>Latest</li>
-      <li><a href=" {{route('favorites.index') }}">My List</a></li>
-      <li>Watch Again</li>
+        <li><a href="{{ route('home') }}" class="hover:text-gray-600 hover:bg-gray-200 p-2 transition duration-300 ease-in-out delay-100">Home</a></li>
+        <li><a href="{{ route('shows.index') }}" class="hover:text-gray-600 hover:bg-gray-200 p-2 transition duration-300 ease-in-out delay-100">Series</a></li>
+        <li><a href="{{ route('stream.index') }}" class="hover:text-gray-600 hover:bg-gray-200 p-2 transition duration-300 ease-in-out delay-100">Films</a></li>
+        <li><a href="{{ route('stream.index') }}" class= "hover:bg-gray-200 hover:text-gray-600 p-2 transition duration-300 ease-in-out delay-100">Latest</a></li>
+        <li><a href="{{ route('favorites.index') }}" class="hover:text-gray-600 hover:bg-gray-200 p-2 transition duration-300 ease-in-out delay-100">My List</a></li>
+        <li><a href="{{ route('stream.index') }}" class="hover:bg-gray-200 hover:text-gray-600 p-2 transition duration-300 ease-in-out delay-100">Watch Again</a></li>
     </ul>
+
+
     @endauth
 
     <nav class="hidden flex-wrap items-center justify-center space-x-6 text-base font-bold md:ml-auto lg:flex">
