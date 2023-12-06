@@ -3,7 +3,7 @@
     <div class="container mx-auto overflow-y-auto rounded-lg lg:px-56">
       <div class="rounded-xl bg-gray-800">
         <div class="responsive-container relative overflow-hidden" style="padding-top: 56.25%">
-          <iframe class="responsive-iframe absolute top-0 left-0 h-full w-full rounded-t-xl" src="https://www.youtube.com/embed/{{ $movies['videos']['results'][0]['key'] }}" style="border:0;" allow="autoplay; encrypted-media" allowfullscreen>
+          <iframe class="responsive-iframe absolute top-0 left-0 h-full w-full rounded-t-xl" src="https://www.youtube.com/embed/{{ $shows['videos']['results'][0]['key'] }}" style="border:0;" allow="autoplay; encrypted-media" allowfullscreen>
           </iframe>
         </div>
 
@@ -16,8 +16,8 @@
               </button>
               <form method="POST" action="{{ route('favorites.store') }}">
                 @csrf
-                <input type="hidden" name="content_id" value="{{ $movies['id'] }}">
-                <input type="hidden" name="content_type" value="movie">
+                <input type="hidden" name="content_id" value="{{ $shows['id'] }}">
+                <input type="hidden" name="content_type" value="tv">
                 <button class="mr-2 flex h-8 w-8 items-center justify-center rounded-full ring-2 ring-gray-400">
                   <x-bi-plus class="h-4 w-4 text-white" />
                 </button>
@@ -36,21 +36,21 @@
                   <div class="flex items-center">
                     <div id="vote_average" class="relative h-16 w-16 rounded-full bg-gray-800 text-white">
                       {{-- @push('scripts')
-                                                <x-rating-script :slug="'vote_average'" :rating="$movies['vote_average'] * 10" :event='null' />
+                                                <x-rating-script :slug="'vote_average'" :rating="$shows['vote_average'] * 10" :event='null' />
                                             @endpush --}}
                       <div class="mx-4 flex">
-                        <span class="font-bold text-green-500">{{ $movies['vote_average'] * 10 . '%' }}</span>
+                        <span class="font-bold text-green-500">{{ $shows['vote_average'] * 10 . '%' }}</span>
                       </div>
                     </div>
                   </div>
                   <div class="mt-2">
-                    <div class="font-semibold text-white">{{ $movies['original_title'] }}</div>
-                    <div class="text-sm text-gray-500">{{ date('Y', strtotime($movies['release_date'] )) }}</div>
+                    <div class="font-semibold text-white">{{ $shows['name'] }}</div>
+                    <div class="text-sm text-gray-500">{{ date('Y', strtotime($shows['first_air_date'] )) }}</div>
                   </div>
                 </span>
 
                 <span>
-                  {{ $movies['overview'] }}
+                  {{ $shows['overview'] }}
                 </span>
               </div>
 
@@ -58,7 +58,7 @@
                 <span class="text-gray-500">
                   Cast:
                   <span class="flex truncate text-sm font-medium text-gray-400">
-                    @foreach ($movies['credits']['cast'] as $cast)
+                    @foreach ($shows['credits']['cast'] as $cast)
                     <div class="">
                       {{ $cast['name'] }},
                     </div>
@@ -69,7 +69,7 @@
                 <span class="text-gray-500">
                   Genres:
                   <span class="flex truncate text-sm font-medium text-gray-400">
-                    @foreach ($movies['genres'] as $genre)
+                    @foreach ($shows['genres'] as $genre)
                     <div class="">
                       {{ $genre['name'] }},
                     </div>
