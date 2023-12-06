@@ -26,7 +26,9 @@
   <x-flash />
 
   @livewireScripts
-  <script src="/js/app.js"></script>
+  <script src="/resources/js/app.js"></script>
+  <script src="/public/echo.js"></script>
+  <script src="{{ mix('js/app.js') }}"></script>
   <script src="https://js.pusher.com/7.2/pusher.min.js"></script>
   @stack('scripts')
 </body>
